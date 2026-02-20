@@ -1,0 +1,90 @@
+/* ==========================================================================
+   Layout, Containers & Buttons (Elegant Refinement)
+   ========================================================================== */
+
+.container {
+    width: 100%;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
+
+.section-padding {
+    padding: var(--space-20) 0;
+}
+
+@media (max-width: 768px) {
+    .section-padding {
+        padding: var(--space-12) 0;
+    }
+}
+
+/* Grids */
+.grid {
+    display: grid;
+    gap: var(--space-8);
+}
+
+/* Elegant Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2.5rem;
+    font-weight: 500;
+    font-size: 0.875rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: all var(--transition-normal);
+    cursor: pointer;
+    border: none;
+    border-radius: 0;
+    /* Sharp edges for luxury feel */
+}
+
+.btn--outline {
+    background-color: transparent;
+    color: var(--color-white);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn--outline:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+}
+
+.btn--solid {
+    background-color: var(--color-white);
+    color: var(--color-bg);
+}
+
+.btn--solid:hover {
+    background-color: var(--color-accent);
+    color: var(--color-bg);
+}
+
+.btn--accent {
+    background-color: var(--color-accent);
+    color: var(--color-bg);
+}
+
+.btn--accent:hover {
+    background-color: var(--color-white);
+}
+
+/* Hide scrollbar for clean look */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-surface-light);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-accent);
+}

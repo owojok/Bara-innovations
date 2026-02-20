@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BARA | Raw Materials & Innovations</title>
+    <meta name="description"
+        content="BARA is specialized in raw materials development, supplies, marketing, agriculture, product development, precious stones, and mining.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap"
+        rel="stylesheet">
+
+    <!-- Core Styles -->
+    <link rel="stylesheet" href="./src/css/variables.css">
+    <link rel="stylesheet" href="./src/css/reset.css">
+    <link rel="stylesheet" href="./src/css/typography.css">
+    <link rel="stylesheet" href="./src/css/layout.css">
+
+    <!-- Component Styles -->
+    <link rel="stylesheet" href="./src/css/components/navbar.css">
+    <link rel="stylesheet" href="./src/css/components/interactions.css">
+    <link rel="stylesheet" href="./src/css/components/hero.css">
+    <link rel="stylesheet" href="./src/css/components/about.css">
+    <link rel="stylesheet" href="./src/css/components/services.css">
+    <link rel="stylesheet" href="./src/css/components/commitment.css">
+    <link rel="stylesheet" href="./src/css/components/map.css">
+    <link rel="stylesheet" href="./src/css/components/gallery.css">
+    <link rel="stylesheet" href="./src/css/components/leadership.css">
+    <link rel="stylesheet" href="./src/css/components/intel.css">
+    <link rel="stylesheet" href="./src/css/components/marquee.css">
+    <link rel="stylesheet" href="./src/css/components/contact.css">
+    <link rel="stylesheet" href="./src/css/components/footer.css">
+
+    <!-- Core Scripts -->
+    <script src="./src/js/components/navbar.js" defer></script>
+    <script src="./src/js/components/interactions.js" defer></script>
+    <script src="./src/js/animations.js" defer></script>
+    <script src="./src/js/main.js" defer></script>
+</head>
+
+<body class="dark-theme">
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+    <div class="custom-cursor__dot"></div>
+
+    <!-- Luxury Pre-loader -->
+    <div class="preloader" id="preloader">
+        <img src="./src/assets/images/bara_logo.png" alt="BARA Innovations" class="preloader__logo">
+    </div>
+
+    <!-- Inline script to ensure preloader hides even if ES modules are blocked by local file:// CORS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const preloader = document.getElementById('preloader');
+            if (preloader) {
+                const hidePreloader = () => {
+                    preloader.classList.add('is-hidden');
+                    setTimeout(() => preloader.remove(), 1000);
+                };
+                window.onload = hidePreloader;
+                setTimeout(hidePreloader, 3000); // 3-second hard fallback
+            }
+        });
+    </script>
+
+    <!-- Background Texture -->
+    <div class="noise-overlay"></div>
+
+    <!-- Navigation -->
+    <header class="navbar" id="navbar">
+        <div class="container navbar__container">
+            <a href="#" class="navbar__logo">
+                <img src="./src/assets/images/bara_logo.png" alt="BARA Innovations Logo" class="logo-image">
+                <span class="logo-text">BARA<span class="logo-dot">.</span></span>
+            </a>
+
+            <button class="navbar__mobile-toggle" aria-label="Toggle Navigation">
+                <span class="hamburger"></span>
+            </button>
+
+            <nav class="navbar__menu">
+                <ul class="navbar__list">
+                    <li><a href="#home" class="navbar__link active">Home</a></li>
+                    <li><a href="#about" class="navbar__link">Heritage</a></li>
+                    <li><a href="#sectors" class="navbar__link">Sectors</a></li>
+                    <li><a href="#gallery" class="navbar__link">Reserves</a></li>
+                    <li><a href="#leadership" class="navbar__link">Leadership</a></li>
+                    <li><a href="#intel" class="navbar__link">Intel</a></li>
+                    <li><a href="#contact" class="navbar__link btn btn--outline">Inquire</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero__image-wrapper">
+                <div class="hero__image"></div>
+            </div>
+            <div class="hero__gradient"></div>
+
+            <div class="container hero__container">
+                <div class="hero__content animate-on-scroll fade-up">
+                    <div class="hero__label">Since 2026 &mdash; Global Reach</div>
+                    <h1 class="hero__title">
+                        Unearthing <br>
+                        <em class="text-italic text-accent">Excellence</em> in <br>
+                        Raw Materials.
+                    </h1>
+                    <p class="hero__description">
+                        Pioneering sustainable development in agriculture, mining, and precious stones. We bridge the
+                        gap between Earth's pristine resources and cutting-edge global innovation.
+                    </p>
+                    <div class="hero__actions">
+                        <a href="#about" class="btn btn--solid">Discover Our Heritage</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero__scroll-indicator">
+                <span class="scroll-text">Scroll to explore</span>
+                <div class="scroll-line"></div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about section-padding">
+            <div class="container">
+                <div class="about__grid">
+                    <div class="about__text animate-on-scroll fade-right">
+                        <span class="section-label">Our Heritage</span>
+                        <h2 class="section-title">Rooted in Earth, <br>Refined by <em
+                                class="text-italic text-accent">Innovation.</em></h2>
+                        <div class="about__divider"></div>
+                        <p class="section-description">
+                            BARA Raw Materials and Innovations Ltd stands as a paragon in resource development and
+                            global trade. We do not just extract; we elevate. Bridging the gap between vital natural
+                            resources and the sophisticated demands of modern industry.
+                        </p>
+                        <div class="about__stats">
+                            <div class="stat">
+                                <span class="stat__number">04</span>
+                                <span class="stat__label">Core Sectors</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat__number">100<span class="text-accent">%</span></span>
+                                <span class="stat__label">Commitment</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about__visual animate-on-scroll fade-left">
+                        <div class="about__img-main">
+                            <!-- Premium Placeholder -->
+                        </div>
+                        <div class="about__img-accent"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sectors Section -->
+        <section id="sectors" class="sectors section-padding">
+            <div class="container">
+                <div class="sectors__header animate-on-scroll fade-up">
+                    <span class="section-label">Our Expertise</span>
+                    <h2 class="section-title">The Four <br><em class="text-italic">Pillars</em> of BARA</h2>
+                </div>
+
+                <div class="sectors__list">
+                    <!-- Sector 1 -->
+                    <article class="sector-item animate-on-scroll fade-up">
+                        <div class="sector-item__number">01</div>
+                        <div class="sector-item__content">
+                            <h3 class="sector-item__title">Raw Materials</h3>
+                            <p class="sector-item__desc">Sourcing and development of high-grade raw materials, forming
+                                the robust foundation for diverse industrial applications worldwide.</p>
+                        </div>
+                        <div class="sector-item__line"></div>
+                    </article>
+
+                    <!-- Sector 2 -->
+                    <article class="sector-item animate-on-scroll fade-up">
+                        <div class="sector-item__number">02</div>
+                        <div class="sector-item__content">
+                            <h3 class="sector-item__title">Precious Stones</h3>
+                            <p class="sector-item__desc">Exploration, refinement, and trading of exceptional quality
+                                precious stones, handled with the utmost precision and care.</p>
+                        </div>
+                        <div class="sector-item__line"></div>
+                    </article>
+
+                    <!-- Sector 3 -->
+                    <article class="sector-item animate-on-scroll fade-up">
+                        <div class="sector-item__number">03</div>
+                        <div class="sector-item__content">
+                            <h3 class="sector-item__title">Mining</h3>
+                            <p class="sector-item__desc">Responsible extraction and processing of vital minerals,
+                                employing state-of-the-art innovations to fuel global industries sustainably.</p>
+                        </div>
+                        <div class="sector-item__line"></div>
+                    </article>
+
+                    <!-- Sector 4 -->
+                    <article class="sector-item animate-on-scroll fade-up">
+                        <div class="sector-item__number">04</div>
+                        <div class="sector-item__content">
+                            <h3 class="sector-item__title">Agriculture</h3>
+                            <p class="sector-item__desc">Sustainable farming, selective marketing, and global
+                                distribution of premium agricultural produce, nourishing the future.</p>
+                        </div>
+                        <div class="sector-item__line"></div>
+                    </article>
+                </div>
+            </div>
+
+            <div class="sectors__bg-text">BARA</div>
+        </section>
+
+        <!-- Infinite Scrolling Marquee -->
+        <div class="marquee" aria-hidden="true">
+            <!-- Double the content for seamless infinite looping -->
+            <div class="marquee__track">
+                <span class="marquee__item">ISO 9001 <strong>CERTIFIED</strong></span>
+                <span class="marquee__item">GLOBAL <strong>TRADE</strong></span>
+                <span class="marquee__item">FAIRTRADE <strong>SOURCED</strong></span>
+                <span class="marquee__item">SUSTAINABLE <strong>AGRICULTURE</strong></span>
+                <span class="marquee__item">ETHICAL <strong>MINING</strong></span>
+
+                <span class="marquee__item">ISO 9001 <strong>CERTIFIED</strong></span>
+                <span class="marquee__item">GLOBAL <strong>TRADE</strong></span>
+                <span class="marquee__item">FAIRTRADE <strong>SOURCED</strong></span>
+                <span class="marquee__item">SUSTAINABLE <strong>AGRICULTURE</strong></span>
+                <span class="marquee__item">ETHICAL <strong>MINING</strong></span>
+            </div>
+        </div>
+
+        <!-- Global Footprint Map Section -->
+        <section id="map" class="map-section section-padding">
+            <div class="container">
+                <div class="map__header animate-on-scroll fade-up">
+                    <span class="section-label">Global Reach</span>
+                    <h2 class="section-title">A Worldwide <em class="text-italic">Footprint.</em></h2>
+                    <p class="section-description mx-auto">Connecting premium sources with international markets across
+                        multiple continents.</p>
+                </div>
+
+                <div class="map-container animate-on-scroll fade-up" style="--delay: 1">
+                    <!-- Nodes -->
+                    <div class="map-node node-africa">
+                        <div class="map-tooltip">
+                            <h4>African Operations</h4>
+                            <p>Primary agricultural and mining hubs.</p>
+                        </div>
+                    </div>
+                    <div class="map-node node-europe">
+                        <div class="map-tooltip">
+                            <h4>European Markets</h4>
+                            <p>Strategic distribution and innovation centers.</p>
+                        </div>
+                    </div>
+                    <div class="map-node node-asia">
+                        <div class="map-tooltip">
+                            <h4>Asian Trade Routes</h4>
+                            <p>Key import and product development partnerships.</p>
+                        </div>
+                    </div>
+                    <div class="map-node node-namerica">
+                        <div class="map-tooltip">
+                            <h4>North American Reach</h4>
+                            <p>Expanding precious stones market networks.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Materials Gallery Section -->
+        <section id="gallery" class="gallery section-padding">
+            <div class="container">
+                <div class="gallery__header animate-on-scroll fade-up">
+                    <span class="section-label">Our Reserves</span>
+                    <h2 class="section-title">The <em class="text-italic text-accent">Essence</em> of the Earth</h2>
+                </div>
+
+                <div class="gallery__grid">
+                    <!-- Image 1 -->
+                    <div class="gallery__item gallery__item--large animate-on-scroll fade-up" style="--delay: 1">
+                        <img src="./src/assets/images/gallery_emerald.png" alt="Raw Emerald" class="gallery__image">
+                        <div class="gallery__overlay">
+                            <span class="gallery__category">Precious Stones</span>
+                            <h3 class="gallery__title">Raw Emerald Ore</h3>
+                        </div>
+                    </div>
+
+                    <!-- Image 2 -->
+                    <div class="gallery__item animate-on-scroll fade-up" style="--delay: 2">
+                        <img src="./src/assets/images/gallery_gold.png" alt="Refined Bullion" class="gallery__image">
+                        <div class="gallery__overlay">
+                            <span class="gallery__category">Mining</span>
+                            <h3 class="gallery__title">Refined Bullion</h3>
+                        </div>
+                    </div>
+
+                    <!-- Image 3 -->
+                    <div class="gallery__item gallery__item--tall animate-on-scroll fade-up" style="--delay: 3">
+                        <img src="./src/assets/images/gallery_wheat.png" alt="Golden Harvest" class="gallery__image">
+                        <div class="gallery__overlay">
+                            <span class="gallery__category">Agriculture</span>
+                            <h3 class="gallery__title">Golden Harvest</h3>
+                        </div>
+                    </div>
+
+                    <!-- Image 4 -->
+                    <div class="gallery__item animate-on-scroll fade-up" style="--delay: 4">
+                        <img src="./src/assets/images/gallery_metals.png" alt="Industrial Metals"
+                            class="gallery__image">
+                        <div class="gallery__overlay">
+                            <span class="gallery__category">Raw Materials</span>
+                            <h3 class="gallery__title">Industrial Metals</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Leadership Section -->
+        <section id="leadership" class="leadership section-padding">
+            <div class="container">
+                <div class="text-center animate-on-scroll fade-up">
+                    <span class="section-label" style="justify-content: center; padding-left: 0;">Leadership</span>
+                    <h2 class="section-title">Visionary <em class="text-italic">Minds</em></h2>
+                </div>
+
+                <div class="leadership__grid">
+                    <div class="leader-card animate-on-scroll fade-up" style="--delay: 1">
+                        <div class="leader-card__image-wrap">
+                            <img src="./src/assets/images/Mark-Kparmak.jpg" alt="Mark Kparmak - CEO"
+                                class="leader-card__image">
+                        </div>
+                        <h3 class="leader-card__name">Mark Kparmak</h3>
+                        <span class="leader-card__role">Chief Executive Officer</span>
+                    </div>
+
+                    <div class="leader-card animate-on-scroll fade-up" style="--delay: 2">
+                        <div class="leader-card__image-wrap">
+                            <img src="./src/assets/images/leader_marcus.png" alt="Marcus Thorne"
+                                class="leader-card__image">
+                        </div>
+                        <h3 class="leader-card__name">Marcus Thorne</h3>
+                        <span class="leader-card__role">Director of Global Trade</span>
+                    </div>
+
+                    <div class="leader-card animate-on-scroll fade-up" style="--delay: 3">
+                        <div class="leader-card__image-wrap">
+                            <img src="./src/assets/images/leader_amina.png" alt="Dr. Amina Diallo"
+                                class="leader-card__image">
+                        </div>
+                        <h3 class="leader-card__name">Dr. Amina Diallo</h3>
+                        <span class="leader-card__role">Head of Innovations</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- News / Intel Section -->
+        <section id="intel" class="intel section-padding">
+            <div class="container">
+                <div class="intel__header animate-on-scroll fade-up">
+                    <div>
+                        <span class="section-label">Company Intel</span>
+                        <h2 class="section-title" style="margin-bottom: 0;">Latest <br><em
+                                class="text-italic">Developments.</em></h2>
+                    </div>
+                    <a href="#" class="btn btn--outline">View All News</a>
+                </div>
+
+                <div class="intel__grid">
+                    <!-- Article 1 -->
+                    <article class="article-card animate-on-scroll fade-up" style="--delay: 1">
+                        <div class="article-card__image-wrap">
+                            <img src="./src/assets/images/intel_mining.png" alt="Sustainability"
+                                class="article-card__image">
+                        </div>
+                        <div class="article-card__meta">
+                            <span>Press Release</span>
+                            <span>Oct 24, 2026</span>
+                        </div>
+                        <h3 class="article-card__title">BARA Expands Ethical Mining Initiatives in South America</h3>
+                        <p class="article-card__excerpt">Announcing a strategic partnership to implement next-generation
+                            sustainable extraction techniques.</p>
+                        <a href="#" class="article-card__link">Read Intel</a>
+                    </article>
+
+                    <!-- Article 2 -->
+                    <article class="article-card animate-on-scroll fade-up" style="--delay: 2">
+                        <div class="article-card__image-wrap">
+                            <img src="./src/assets/images/intel_tech.png" alt="Materials" class="article-card__image">
+                        </div>
+                        <div class="article-card__meta">
+                            <span>Market Insight</span>
+                            <span>Sep 12, 2026</span>
+                        </div>
+                        <h3 class="article-card__title">The Future of Rare Earth Elements in Tech Manufacturing</h3>
+                        <p class="article-card__excerpt">An in-depth analysis of supply chain resilience and emerging
+                            demands globally.</p>
+                        <a href="#" class="article-card__link">Read Intel</a>
+                    </article>
+
+                    <!-- Article 3 -->
+                    <article class="article-card animate-on-scroll fade-up" style="--delay: 3">
+                        <div class="article-card__image-wrap">
+                            <img src="./src/assets/images/intel_agri.png" alt="Agriculture Tech"
+                                class="article-card__image">
+                        </div>
+                        <div class="article-card__meta">
+                            <span>Product Dev</span>
+                            <span>Aug 05, 2026</span>
+                        </div>
+                        <h3 class="article-card__title">Breakthrough in Crop Yield Optimization Algorithms</h3>
+                        <p class="article-card__excerpt">Our latest innovation promises to decrease water usage by 40%
+                            while significantly boosting output.</p>
+                        <a href="#" class="article-card__link">Read Intel</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sustainability Commitment Section -->
+        <section id="sustainability" class="commitment section-padding">
+            <div class="container commitment__container">
+                <div class="commitment__grid">
+                    <div class="commitment__visual animate-on-scroll fade-right">
+                        <div class="commitment__image-frame">
+                            <!-- Nature/Environmental Abstract Image Placeholder -->
+                        </div>
+                    </div>
+
+                    <div class="commitment__content animate-on-scroll fade-left">
+                        <span class="section-label">Our Responsibility</span>
+                        <h2 class="commitment__title">Advancing Global Trade <br>with <em
+                                class="text-italic text-accent">Environmental Stewardship.</em></h2>
+                        <div class="about__divider"></div>
+
+                        <p class="commitment__text">
+                            At BARA Raw Materials and Innovations Ltd, we recognize that true luxury and lasting value
+                            are inexorably linked to the health of our planet. Our operations in agriculture, mining,
+                            and beyond are rooted in an unwavering commitment to sustainable practices.
+                        </p>
+
+                        <div class="commitment__list">
+                            <div class="commitment__item">
+                                <div class="commitment__icon">◇</div>
+                                <div>
+                                    <h3 class="commitment__item-title">Ethical Sourcing</h3>
+                                    <p class="commitment__item-desc">Ensuring traceability and ethical extraction across
+                                        all raw material and precious stone supply chains.</p>
+                                </div>
+                            </div>
+
+                            <div class="commitment__item">
+                                <div class="commitment__icon">◇</div>
+                                <div>
+                                    <h3 class="commitment__item-title">Sustainable Agriculture</h3>
+                                    <p class="commitment__item-desc">Promoting farming methods that replenish soil
+                                        vitality and protect vital local ecosystems.</p>
+                                </div>
+                            </div>
+
+                            <div class="commitment__item">
+                                <div class="commitment__icon">◇</div>
+                                <div>
+                                    <h3 class="commitment__item-title">Resource Innovation</h3>
+                                    <p class="commitment__item-desc">Investing in technologies that minimize waste and
+                                        optimize the lifecycle of vital natural resources.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA / Contact Section -->
+        <section id="contact" class="contact section-padding">
+            <div class="container">
+                <div class="contact__wrapper animate-on-scroll fade-up">
+                    <div class="contact__content">
+                        <h2>Forge a <br><em class="text-italic">Partnership</em></h2>
+                        <p>Let us innovate and grow together. Engage with us for premium supplies, strategic
+                            partnerships, or exclusive inquiries.</p>
+                        <a href="mailto:info@bara-innovations.com" class="btn btn--accent mt-4">Initiate Dialogue</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer__container">
+            <div class="footer__top">
+                <a href="#" class="footer__logo">BARA<span class="text-accent">.</span></a>
+                <p class="footer__tagline">Raw Materials & Innovations Ltd.</p>
+            </div>
+            <div class="footer__grid">
+                <div class="footer__col">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">Heritage</a></li>
+                        <li><a href="#sectors">Sectors</a></li>
+                        <li><a href="#gallery">Reserves</a></li>
+                        <li><a href="#leadership">Leadership</a></li>
+                    </ul>
+                </div>
+                <div class="footer__col">
+                    <h4>Operations</h4>
+                    <ul>
+                        <li><a href="#map">Global Footprint</a></li>
+                        <li><a href="#sustainability">Sustainability</a></li>
+                        <li><a href="#intel">Company Intel</a></li>
+                    </ul>
+                </div>
+                <div class="footer__col">
+                    <h4>Connect</h4>
+                    <p>info@bara-innovations.com</p>
+                    <p>Worldwide</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <div class="container">
+                <p>&copy; 2026 BARA Raw Materials and Innovations Ltd. All rights reserved.</p>
+                <div class="footer__legal">
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

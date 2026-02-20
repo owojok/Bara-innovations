@@ -1,0 +1,54 @@
+/* ==========================================================================
+   Contact CTA Component (Stark & Minimal)
+   ========================================================================== */
+
+.contact {
+    background-color: var(--color-surface);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.contact__wrapper {
+    position: relative;
+    padding: var(--space-16) 0;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Subtle central glow */
+.contact__wrapper::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.contact__content {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.contact__content h2 {
+    font-size: clamp(3rem, 6vw, 5rem);
+    margin-bottom: var(--space-6);
+    line-height: 1.1;
+}
+
+.contact__content p {
+    font-size: 1.25rem;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-8);
+}
+
+@media (max-width: 768px) {
+    .contact__wrapper {
+        padding: var(--space-8) 0;
+    }
+}

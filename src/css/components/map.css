@@ -1,0 +1,136 @@
+/* ==========================================================================
+   Global Map / Footprint Component
+   ========================================================================== */
+
+.map-section {
+    background-color: var(--color-bg);
+    overflow: hidden;
+    position: relative;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.map__header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto var(--space-12);
+}
+
+.map-container {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    /* Simulate map aspect ratio */
+    aspect-ratio: 2/1;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500"><path fill="%231A221F" d="M100,150 Q120,130 150,140 T200,100 Q220,160 250,150 T300,200 Q350,220 380,180 T400,120 Q450,100 500,150 T600,100 Q650,80 700,120 T800,90 Q850,120 900,100 T950,150 L950,400 Q800,450 700,400 T500,450 Q400,420 300,450 T100,400 Z"/></svg>');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.8;
+}
+
+/* Glowing Nodes */
+.map-node {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: var(--color-accent);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    z-index: 2;
+}
+
+/* Pulsing effect */
+.map-node::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background-color: rgba(212, 175, 55, 0.4);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: nodePulse 2s infinite ease-out;
+    pointer-events: none;
+}
+
+@keyframes nodePulse {
+    0% {
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(2);
+        opacity: 0;
+    }
+}
+
+/* Tooltip */
+.map-tooltip {
+    position: absolute;
+    bottom: calc(100% + 15px);
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-accent);
+    padding: var(--space-3) var(--space-4);
+    width: 250px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-fast);
+    z-index: 10;
+    pointer-events: none;
+}
+
+.map-node:hover .map-tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.map-tooltip h4 {
+    color: var(--color-accent);
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.map-tooltip p {
+    font-size: 0.875rem;
+    margin: 0;
+}
+
+/* Hardcoded map locations (Simulated) */
+.node-africa {
+    top: 60%;
+    left: 52%;
+}
+
+.node-europe {
+    top: 35%;
+    left: 48%;
+}
+
+.node-asia {
+    top: 45%;
+    left: 75%;
+}
+
+.node-namerica {
+    top: 35%;
+    left: 20%;
+    animation-delay: 0.5s;
+}
+
+@media (max-width: 992px) {
+    .map-container {
+        aspect-ratio: auto;
+        height: 400px;
+        background-size: cover;
+    }
+
+    .map-tooltip {
+        width: 200px;
+    }
+}

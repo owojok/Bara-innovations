@@ -1,0 +1,87 @@
+/* ==========================================================================
+   Infinite Scroll Partners/Certifications Marquee Component
+   ========================================================================== */
+
+.marquee {
+    background-color: var(--color-surface-light);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding: var(--space-8) 0;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+}
+
+/* Elegant fade out on edges */
+.marquee::before,
+.marquee::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 15%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.marquee::before {
+    left: 0;
+    background: linear-gradient(to right, var(--color-surface-light) 0%, transparent 100%);
+}
+
+.marquee::after {
+    right: 0;
+    background: linear-gradient(to left, var(--color-surface-light) 0%, transparent 100%);
+}
+
+.marquee__track {
+    display: flex;
+    align-items: center;
+    gap: var(--space-12);
+    width: max-content;
+    animation: marqueeScroll 40s linear infinite;
+}
+
+/* Pause on hover for accessibility */
+.marquee:hover .marquee__track {
+    animation-play-state: paused;
+}
+
+.marquee__item {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    color: var(--color-text-muted);
+    opacity: 0.5;
+    white-space: nowrap;
+    transition: all var(--transition-fast);
+}
+
+.marquee__item:hover {
+    color: var(--color-text);
+    opacity: 1;
+}
+
+/* Styling for textual logos in marquee */
+.marquee__item strong {
+    color: var(--color-accent);
+}
+
+@keyframes marqueeScroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-50% - (var(--space-12) / 2)));
+    }
+}
+
+@media (max-width: 768px) {
+    .marquee {
+        padding: var(--space-4) 0;
+    }
+
+    .marquee__item {
+        font-size: 1.5rem;
+    }
+}

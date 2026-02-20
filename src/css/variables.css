@@ -1,0 +1,61 @@
+/* ==========================================================================
+   CSS Variables (Luxury Dark Theme Tokens)
+   ========================================================================== */
+
+:root {
+    /* Luxury Palette */
+    --color-bg: #0B0E0D;
+    /* Deep rich almost black with forest tint */
+    --color-surface: #121816;
+    /* Slightly lighter for elevation */
+    --color-surface-light: #1A221F;
+
+    --color-accent: #D4AF37;
+    /* Metallic Gold */
+    --color-accent-dark: #A68725;
+
+    --color-text: #F8F9F5;
+    /* Pearl / Off-white */
+    --color-text-muted: #9AA09D;
+    /* Elegant soft grey */
+
+    /* Solid Blacks and Whites */
+    --color-black: #000000;
+    --color-white: #FFFFFF;
+
+    /* Typography */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Inter', system-ui, sans-serif;
+
+    /* Spacing (Larger scales for elegance) */
+    --space-1: 0.5rem;
+    --space-2: 1rem;
+    --space-3: 1.5rem;
+    --space-4: 2rem;
+    --space-5: 3rem;
+    --space-6: 4rem;
+    --space-8: 6rem;
+    --space-12: 8rem;
+    --space-16: 12rem;
+    --space-20: 16rem;
+
+    /* Layout Constraints */
+    --container-width: 1400px;
+    --container-padding: 5vw;
+
+    /* Lines and Borders */
+    --border-thin: 1px solid rgba(248, 249, 245, 0.1);
+    --border-accent: 1px solid var(--color-accent);
+
+    /* Transitions */
+    --transition-fast: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+    --transition-normal: 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+    --transition-slow: 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+
+    /* Z-Index */
+    --z-negative: -1;
+    --z-background: 0;
+    --z-normal: 10;
+    --z-overlay: 40;
+    --z-navbar: 100;
+}

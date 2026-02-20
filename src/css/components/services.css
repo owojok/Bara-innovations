@@ -1,0 +1,125 @@
+/* ==========================================================================
+   Sectors / Services (Minimalist List)
+   ========================================================================== */
+
+.sectors {
+    position: relative;
+    background-color: var(--color-surface);
+    overflow: hidden;
+}
+
+.sectors__header {
+    margin-bottom: var(--space-12);
+}
+
+.sectors__list {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+}
+
+/* Replacing cards with an elegant list */
+.sector-item {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: var(--space-8);
+    padding: var(--space-8) 0;
+    position: relative;
+    cursor: default;
+    transition: background-color var(--transition-normal);
+}
+
+.sector-item:hover {
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+.sector-item__number {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    color: var(--color-accent);
+    opacity: 0.5;
+    transition: opacity var(--transition-normal);
+}
+
+.sector-item:hover .sector-item__number {
+    opacity: 1;
+}
+
+.sector-item__content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: var(--space-8);
+    align-items: center;
+}
+
+.sector-item__title {
+    font-size: 2.5rem;
+    margin: 0;
+    transition: color var(--transition-normal);
+}
+
+.sector-item__desc {
+    margin: 0;
+    max-width: 500px;
+    font-size: 1.125rem;
+}
+
+/* Thin border separator instead of typical borders */
+.sector-item__line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sector-item:first-child::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Giant background watermark text */
+.sectors__bg-text {
+    position: absolute;
+    top: 50%;
+    right: -5%;
+    transform: translateY(-50%);
+    font-family: var(--font-heading);
+    font-size: 35vw;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.02);
+    writing-mode: vertical-rl;
+    line-height: 1;
+    z-index: 1;
+    pointer-events: none;
+}
+
+@media (max-width: 992px) {
+    .sector-item__content {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+    }
+
+    .sector-item__title {
+        font-size: 2rem;
+    }
+
+    .sectors__bg-text {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .sector-item {
+        grid-template-columns: 1fr;
+        gap: var(--space-2);
+        padding: var(--space-6) 0;
+    }
+}

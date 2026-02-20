@@ -1,0 +1,94 @@
+/* ==========================================================================
+   About Component (Asymmetric & Editorial)
+   ========================================================================== */
+
+.about {
+    position: relative;
+    background-color: var(--color-bg);
+}
+
+.about__grid {
+    display: grid;
+    grid-template-columns: 5fr 6fr;
+    gap: var(--space-16);
+    align-items: center;
+}
+
+.about__divider {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin-bottom: var(--space-6);
+}
+
+.about__stats {
+    display: flex;
+    gap: var(--space-8);
+    margin-top: var(--space-8);
+    padding-top: var(--space-6);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat__number {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    color: var(--color-text);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.stat__label {
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-muted);
+}
+
+/* Asymmetric Image Implementation */
+.about__visual {
+    position: relative;
+    height: 100%;
+    min-height: 600px;
+}
+
+.about__img-main {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80%;
+    height: 90%;
+    background-color: var(--color-surface);
+    background-image: url('../../assets/images/about_img.png');
+    background-size: cover;
+    background-position: center;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.about__img-accent {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    height: 50%;
+    background-color: var(--color-accent-dark);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+
+@media (max-width: 992px) {
+    .about__grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-12);
+    }
+
+    .about__visual {
+        min-height: 400px;
+        order: -1;
+        /* Image floats to top on mobile */
+    }
+}
