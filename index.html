@@ -15,6 +15,9 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap"
         rel="stylesheet">
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./src/assets/icons/favicon.ico">
+
     <!-- Core Styles -->
     <link rel="stylesheet" href="./src/css/variables.css">
     <link rel="stylesheet" href="./src/css/reset.css">
@@ -34,11 +37,13 @@
     <link rel="stylesheet" href="./src/css/components/intel.css">
     <link rel="stylesheet" href="./src/css/components/marquee.css">
     <link rel="stylesheet" href="./src/css/components/contact.css">
+    <link rel="stylesheet" href="./src/css/components/modal.css">
     <link rel="stylesheet" href="./src/css/components/footer.css">
 
     <!-- Core Scripts -->
     <script src="./src/js/components/navbar.js" defer></script>
     <script src="./src/js/components/interactions.js" defer></script>
+    <script src="./src/js/components/modal.js" defer></script>
     <script src="./src/js/animations.js" defer></script>
     <script src="./src/js/main.js" defer></script>
 </head>
@@ -83,7 +88,7 @@
             <div class="navbar__desktop-links">
                 <a href="#home" class="navbar__link active">Home</a>
                 <a href="#leadership" class="navbar__link">Leadership</a>
-                <a href="#contact" class="navbar__link btn btn--outline">Inquire</a>
+                <button class="navbar__link btn btn--outline modal-trigger" data-target="contactModal">Inquire</button>
             </div>
 
             <button class="navbar__mobile-toggle" aria-label="Toggle Navigation">
@@ -98,7 +103,8 @@
                     <li><a href="#gallery" class="navbar__link">Reserves</a></li>
                     <li><a href="#leadership" class="navbar__link">Leadership</a></li>
                     <li><a href="#intel" class="navbar__link">Intel</a></li>
-                    <li><a href="#contact" class="navbar__link btn btn--outline">Inquire</a></li>
+                    <li><button class="navbar__link btn btn--outline modal-trigger" data-target="contactModal"
+                            style="width: 100%;">Inquire</button></li>
                 </ul>
             </nav>
         </div>
@@ -507,7 +513,8 @@
                             <a href="mailto:INFO@BARARAW.COM"
                                 style="text-decoration: none; color: inherit;">INFO@BARARAW.COM</a>
                         </p>
-                        <a href="mailto:INFO@BARARAW.COM" class="btn btn--accent mt-4">Initiate Dialogue</a>
+                        <button class="btn btn--accent mt-4 modal-trigger" data-target="contactModal">Initiate
+                            Dialogue</button>
                     </div>
                 </div>
             </div>
@@ -558,6 +565,50 @@
             </div>
         </div>
     </footer>
+
+    <!-- Scroll-to-Top Button -->
+    <button class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="24" height="24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
+        </svg>
+    </button>
+
+    <!-- Contact Modal -->
+    <div class="modal" id="contactModal">
+        <div class="modal__backdrop" data-close="contactModal"></div>
+        <div class="modal__content">
+            <button class="modal__close" data-close="contactModal" aria-label="Close modal">&times;</button>
+            <div class="modal__header">
+                <h2>Initiate <em class="text-italic text-accent">Dialogue</em></h2>
+                <p>Submit your inquiry and our executive team will revert promptly.</p>
+            </div>
+            <form class="modal__form" action="https://formspree.io/f/your_form_id_here" method="POST">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required placeholder="John Doe">
+                </div>
+                <div class="form-group">
+                    <label for="email">Corporate Email</label>
+                    <input type="email" id="email" name="email" required placeholder="john@company.com">
+                </div>
+                <div class="form-group">
+                    <label for="interest">Area of Interest</label>
+                    <select id="interest" name="interest">
+                        <option value="mining">Mining & Minerals</option>
+                        <option value="agriculture">Agricultural Produce</option>
+                        <option value="partnerships">Strategic Partnerships</option>
+                        <option value="other">Other Inquiry</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="4" required
+                        placeholder="How can we assist you?"></textarea>
+                </div>
+                <button type="submit" class="btn btn--accent btn--full">Send Inquiry</button>
+            </form>
+        </div>
+    </div>
 
 </body>
 

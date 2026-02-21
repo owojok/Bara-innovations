@@ -6,6 +6,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize custom interactions (cursor, preloader)
     initInteractions();
 
+    // Initialize Modal and Scroll-to-Top
+    if (typeof initModalAndScroll === 'function') initModalAndScroll();
+
     // Initialize Navigation specific logic
     initNavbar();
 
