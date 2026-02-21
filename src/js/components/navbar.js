@@ -54,14 +54,16 @@ function initNavbar() {
             const sectionTop = current.offsetTop - 100; // offset for nav height
             const sectionId = current.getAttribute('id');
 
-            const link = document.querySelector(`.navbar__menu a[href*=${sectionId}]`);
-            if (!link) return;
+            const links = document.querySelectorAll(`.navbar__link[href*="#${sectionId}"]`);
+            if (!links.length) return;
 
-            if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-                link.classList.add('active');
-            } else {
-                link.classList.remove('active');
-            }
+            links.forEach(link => {
+                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
         });
     };
 

@@ -91,9 +91,9 @@
     color: var(--color-text);
 }
 
-/* Elegant Hamburger for mobile */
+/* Elegant Hamburger for all screens */
 .navbar__mobile-toggle {
-    display: none;
+    display: block;
     background: transparent;
     border: none;
     cursor: pointer;
@@ -149,42 +149,53 @@
     transform: translateY(-8px) rotate(-45deg);
 }
 
+/* Sidebar Menu styling (active on all screen sizes) */
+.navbar__menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    max-width: 400px;
+    height: 100vh;
+    background-color: var(--color-surface);
+    padding: var(--space-16) var(--space-6);
+    border-left: 1px solid rgba(255, 255, 255, 0.05);
+    transition: right var(--transition-normal);
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar.menu-open .navbar__menu {
+    right: 0;
+}
+
+.navbar__list {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-4);
+}
+
+.navbar__link:not(.btn) {
+    font-size: 1.25rem;
+}
+
+.navbar__link.btn {
+    margin-top: var(--space-6);
+    width: 100%;
+}
+
+/* Desktop Links Container */
+.navbar__desktop-links {
+    display: flex;
+    align-items: center;
+    gap: var(--space-6);
+    margin-left: auto;
+    margin-right: var(--space-6);
+    /* space before hamburger */
+}
+
 @media (max-width: 992px) {
-    .navbar__mobile-toggle {
-        display: block;
-    }
-
-    .navbar__menu {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 100%;
-        max-width: 400px;
-        height: 100vh;
-        background-color: var(--color-surface);
-        padding: var(--space-16) var(--space-6);
-        border-left: 1px solid rgba(255, 255, 255, 0.05);
-        transition: right var(--transition-normal);
-        display: flex;
-        flex-direction: column;
-    }
-
-    .navbar.menu-open .navbar__menu {
-        right: 0;
-    }
-
-    .navbar__list {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: var(--space-4);
-    }
-
-    .navbar__link:not(.btn) {
-        font-size: 1.25rem;
-    }
-
-    .navbar__link.btn {
-        margin-top: var(--space-6);
-        width: 100%;
+    .navbar__desktop-links {
+        display: none;
     }
 }
