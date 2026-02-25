@@ -90,14 +90,13 @@
 }
 
 @media (max-width: 480px) {
-
-    .logo-divider,
-    .logo-tagline {
-        display: none;
+    .logo-name {
+        font-size: 1.1rem;
     }
 
-    .logo-name {
-        font-size: 1.2rem;
+    .logo-tagline {
+        font-size: 0.52rem;
+        letter-spacing: 0.16em;
     }
 }
 
