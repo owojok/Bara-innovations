@@ -59,6 +59,13 @@ picture {
     display: block;
 }
 
+/* Premium Accessibility Focus States (Enhancement 5) */
+*:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 4px;
+    border-radius: 2px;
+}
+
 /* Inherit fonts for inputs and buttons */
 input,
 button,

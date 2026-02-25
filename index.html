@@ -82,7 +82,11 @@
         <div class="container navbar__container">
             <a href="#" class="navbar__logo">
                 <img src="./src/assets/images/bara_logo.png" alt="BARA Innovations Logo" class="logo-image">
-                <span class="logo-text">BARA<span class="logo-dot">.</span></span>
+                <div class="logo-divider"></div>
+                <div class="logo-wordmark">
+                    <span class="logo-name">BARA<span class="logo-dot">.</span></span>
+                    <span class="logo-tagline">Raw Materials &amp; Innovations Ltd.</span>
+                </div>
             </a>
 
             <div class="navbar__desktop-links">
@@ -287,6 +291,21 @@
                 </div>
 
                 <div class="map-container animate-on-scroll fade-up" style="--delay: 1">
+
+                    <!-- Animated Connection Lines -->
+                    <svg class="map__connections" viewBox="0 0 1000 500" preserveAspectRatio="none">
+                        <!-- Africa to Europe -->
+                        <path class="trade-route" d="M 520,300 Q 480,240 480,175" />
+                        <!-- Africa to Asia -->
+                        <path class="trade-route" d="M 520,300 Q 650,280 750,225" />
+                        <!-- Europe to North America -->
+                        <path class="trade-route" d="M 480,175 Q 350,140 200,175" />
+                        <!-- Asia to North America (wrapping around implied) -->
+                        <path class="trade-route" d="M 750,225 Q 900,180 950,180" stroke-dasharray="4 8"
+                            opacity="0.5" />
+                        <path class="trade-route" d="M 50,180 Q 100,180 200,175" stroke-dasharray="4 8" opacity="0.5" />
+                    </svg>
+
                     <!-- Nodes -->
                     <div class="map-node node-africa">
                         <div class="map-tooltip">
@@ -326,7 +345,8 @@
 
                 <div class="gallery__grid">
                     <!-- Image 1 -->
-                    <div class="gallery__item gallery__item--large animate-on-scroll fade-up" style="--delay: 1">
+                    <div class="gallery__item gallery__item--large has-glimmer animate-on-scroll fade-up"
+                        style="--delay: 1">
                         <img src="./src/assets/images/gallery_emerald.png" alt="Raw Emerald" class="gallery__image">
                         <div class="gallery__overlay">
                             <span class="gallery__category">Precious Stones</span>
@@ -335,7 +355,7 @@
                     </div>
 
                     <!-- Image 2 -->
-                    <div class="gallery__item animate-on-scroll fade-up" style="--delay: 2">
+                    <div class="gallery__item has-glimmer animate-on-scroll fade-up" style="--delay: 2">
                         <img src="./src/assets/images/gallery_gold.png" alt="Refined Bullion" class="gallery__image">
                         <div class="gallery__overlay">
                             <span class="gallery__category">Mining</span>
@@ -376,7 +396,7 @@
                 <div class="leadership__grid">
                     <div class="leader-card animate-on-scroll fade-up" style="--delay: 1">
                         <div class="leader-card__image-wrap">
-                            <img src="./src/assets/images/CEO.png" alt="CEO" class="leader-card__image">
+                            <img src="./src/assets/images/CEO.png" alt="CEO" class="leader-card__image" loading="lazy">
                         </div>
                         <h3 class="leader-card__name">Lafe Kparmak</h3>
                         <span class="leader-card__role">Chief Executive Officer</span>
@@ -385,7 +405,7 @@
                     <div class="leader-card animate-on-scroll fade-up" style="--delay: 2">
                         <div class="leader-card__image-wrap">
                             <img src="./src/assets/images/leader_marcus.png" alt="Marcus Thorne"
-                                class="leader-card__image">
+                                class="leader-card__image" loading="lazy">
                         </div>
                         <h3 class="leader-card__name">Marcus Thorne</h3>
                         <span class="leader-card__role">Director of Global Trade</span>
@@ -394,7 +414,7 @@
                     <div class="leader-card animate-on-scroll fade-up" style="--delay: 3">
                         <div class="leader-card__image-wrap">
                             <img src="./src/assets/images/leader_amina.png" alt="Dr. Amina Diallo"
-                                class="leader-card__image">
+                                class="leader-card__image" loading="lazy">
                         </div>
                         <h3 class="leader-card__name">Dr. Amina Diallo</h3>
                         <span class="leader-card__role">Head of Innovations</span>
@@ -420,7 +440,7 @@
                     <article class="article-card animate-on-scroll fade-up" style="--delay: 1">
                         <div class="article-card__image-wrap">
                             <img src="./src/assets/images/intel_mining.png" alt="Sustainability"
-                                class="article-card__image">
+                                class="article-card__image" loading="lazy">
                         </div>
                         <div class="article-card__meta">
                             <span>Press Release</span>
@@ -435,7 +455,8 @@
                     <!-- Article 2 -->
                     <article class="article-card animate-on-scroll fade-up" style="--delay: 2">
                         <div class="article-card__image-wrap">
-                            <img src="./src/assets/images/intel_tech.png" alt="Materials" class="article-card__image">
+                            <img src="./src/assets/images/intel_tech.png" alt="Materials" class="article-card__image"
+                                loading="lazy">
                         </div>
                         <div class="article-card__meta">
                             <span>Market Insight</span>
@@ -451,7 +472,7 @@
                     <article class="article-card animate-on-scroll fade-up" style="--delay: 3">
                         <div class="article-card__image-wrap">
                             <img src="./src/assets/images/intel_agri.png" alt="Agriculture Tech"
-                                class="article-card__image">
+                                class="article-card__image" loading="lazy">
                         </div>
                         <div class="article-card__meta">
                             <span>Product Dev</span>

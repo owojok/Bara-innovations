@@ -70,4 +70,54 @@ function initAnimations() {
 
         animateObserver.observe(el);
     });
+
+    initParallax();
+    initStaggeredText();
 }
+
+/**
+ * Advanced Scroll & Parallax Effects (Enhancement 1)
+ */
+function initParallax() {
+    const heroImage = document.querySelector('.hero__image');
+    const noiseOverlay = document.querySelector('.noise-overlay');
+
+    if (!heroImage && !noiseOverlay) return;
+
+    window.addEventListener('scroll', () => {
+        const scrolled = window.scrollY;
+
+        requestAnimationFrame(() => {
+            if (heroImage && scrolled < window.innerHeight) {
+                heroImage.style.transform = `translateY(${scrolled * 0.4}px)`;
+            }
+            if (noiseOverlay) {
+                // Subtle noise shift
+                noiseOverlay.style.transform = `translateY(${scrolled * 0.1}px) translateZ(0)`;
+            }
+        });
+    }, { passive: true });
+}
+
+/**
+ * Staggered Text Reveal Animations (Enhancement 4)
+ */
+function initStaggeredText() {
+    const titles = document.querySelectorAll('.section-title');
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    titles.forEach(title => {
+        // Only apply to titles that don't already have complex inner HTML 
+        // (to avoid breaking the existing <em> tags, we'll gently wrap text nodes)
+
+        // Let's rely on CSS for the reveal using the fade-up class
+        // This function ensures all section titles get the animation class if missing
+        if (!title.classList.contains('animate-on-scroll')) {
+            title.classList.add('animate-on-scroll', 'fade-up');
+        }
+    });
+}
+
+// Initialize when DOM is ready
+document.addEventListener('DOMContentLoaded', initAnimations);

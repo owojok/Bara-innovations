@@ -43,16 +43,62 @@
     object-fit: contain;
 }
 
-.logo-text {
+/* Vertical separator between logo mark and wordmark */
+.logo-divider {
+    width: 1px;
+    height: 36px;
+    background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.2), transparent);
+    flex-shrink: 0;
+}
+
+/* Wordmark container */
+.logo-wordmark {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    justify-content: center;
+}
+
+/* BARA — primary brand name */
+.logo-name {
     font-family: var(--font-heading);
-    font-weight: 500;
-    font-size: 1.5rem;
-    color: var(--color-text);
-    letter-spacing: 0.1em;
+    font-weight: 600;
+    font-size: 1.35rem;
+    letter-spacing: 0.18em;
+    line-height: 1;
+    background: linear-gradient(105deg, var(--color-text) 60%, var(--color-accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .logo-dot {
+    -webkit-text-fill-color: var(--color-accent);
     color: var(--color-accent);
+}
+
+/* Full legal name tagline */
+.logo-tagline {
+    font-family: var(--font-body);
+    font-size: 0.6rem;
+    font-weight: 400;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(248, 249, 245, 0.45);
+    line-height: 1;
+    white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+
+    .logo-divider,
+    .logo-tagline {
+        display: none;
+    }
+
+    .logo-name {
+        font-size: 1.2rem;
+    }
 }
 
 .navbar__list {

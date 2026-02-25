@@ -27,12 +27,45 @@ function initInteractions() {
         const interactiveElements = document.querySelectorAll('a, button, input, textarea, select, .sector-item');
 
         interactiveElements.forEach(el => {
-            el.addEventListener('mouseenter', () => {
-                cursor.classList.add('is-hovering');
-            });
-            el.addEventListener('mouseleave', () => {
-                cursor.classList.remove('is-hovering');
-            });
+            el.addEventListener('mouseenter', () => cursor.classList.add('is-hovering'));
+            el.addEventListener('mouseleave', () => cursor.classList.remove('is-hovering'));
         });
     }
+
+    // 2. Magnetic Elements Logic (Enhancement 3)
+    initMagneticElements();
 }
+
+/**
+ * Magnetic element logic for Luxury interactions
+ */
+function initMagneticElements() {
+    // Select primary call to actions and main links
+    const magnetics = document.querySelectorAll('.btn, .navbar__link');
+
+    magnetics.forEach(btn => {
+        btn.addEventListener('mousemove', (e) => {
+            const rect = btn.getBoundingClientRect();
+            // Calculate center of element
+            const h = rect.width / 2;
+            const w = rect.height / 2;
+            // Calculate distance from center
+            const x = e.clientX - rect.left - h;
+            const y = e.clientY - rect.top - w;
+
+            // Limit the pull distance
+            const pullX = x * 0.3;
+            const pullY = y * 0.3;
+
+            // Apply transform dynamically
+            btn.style.transform = `translate(${pullX}px, ${pullY}px)`;
+        });
+
+        // Reset transform on mouse leave
+        btn.addEventListener('mouseleave', () => {
+            btn.style.transform = `translate(0px, 0px)`;
+        });
+    });
+}
+
+document.addEventListener('DOMContentLoaded', initInteractions);

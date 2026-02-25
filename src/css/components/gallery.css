@@ -96,3 +96,77 @@
         grid-row: auto !important;
     }
 }
+
+/* ==========================================================================
+   Glittering Effects for Gems
+   ========================================================================== */
+
+.has-glimmer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.4) 50%,
+            rgba(255, 255, 255, 0) 100%);
+    transform: skewX(-25deg);
+    animation: sweep-glimmer 5s infinite;
+    pointer-events: none;
+    z-index: 3;
+}
+
+@keyframes sweep-glimmer {
+    0% {
+        left: -150%;
+    }
+
+    15% {
+        left: 150%;
+    }
+
+    100% {
+        left: 150%;
+    }
+}
+
+.has-glimmer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 4;
+    background-image:
+        radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.9) 1px, transparent 3px),
+        radial-gradient(circle at 75% 65%, rgba(255, 255, 255, 0.9) 2px, transparent 4px),
+        radial-gradient(circle at 45% 85%, rgba(255, 255, 255, 0.9) 1px, transparent 3px),
+        radial-gradient(circle at 85% 25%, rgba(255, 255, 255, 0.9) 1.5px, transparent 3px),
+        radial-gradient(circle at 30% 70%, rgba(255, 255, 255, 0.9) 1.5px, transparent 4px),
+        radial-gradient(circle at 60% 20%, rgba(255, 255, 255, 0.9) 1px, transparent 3px);
+    background-size: 150% 150%;
+    animation: sparkle-glitter 4s infinite alternate ease-in-out;
+}
+
+@keyframes sparkle-glitter {
+    0% {
+        opacity: 0;
+        background-position: 0% 0%;
+        filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.4));
+    }
+
+    50% {
+        opacity: 1;
+        filter: drop-shadow(0 0 8px rgba(255, 255, 255, 1));
+    }
+
+    100% {
+        opacity: 0;
+        background-position: 5% 5%;
+        filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.4));
+    }
+}
